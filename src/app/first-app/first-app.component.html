@@ -1,0 +1,28 @@
+<p>
+  first-app works!
+</p>
+<!-- Ci cdessous c'est de l'Event binding donc les changements fait ici  se voient sur ngModel
+Mais s'il ya un changement sur le chmps lié à l'ngModel, le champs lié à l'event binding
+restera inchangé
+!!-->
+<input type="text" (input)="onData($event)" >
+<input type="text" [(ngModel)]="name" placeholder="ngModel" >
+<br />{{ name }}<hr>
+
+<!--Directive structurelle pour modifier le DOM Parcourir un tableau -->
+
+<ul>
+  <li *ngFor="let movie of movies; let i = index" (click)="onUpdate(movie)">
+    {{ movie.title }} 
+    <a (click)="onDelete(i)">[x]</a>
+  </li>
+</ul>
+<!-- <a class="btn btn-info" (click)="myAlert('je suis là !!')"  >Mon lien </a> 
+<input type="text" (input)="onData($event)" > <input [(ngModel)]="movie" >
+(click)="selection()" 
+-->
+<input [(ngModel)]="movie.title" >
+<button type="button" (click)="addFilm()" class="btn btn-success" >Ajouter le film</button>
+<button type="button" (click)="modifier()" class="btn btn-primary" >Modifier le film</button>
+<button type="button" (click)="delete()" class="btn btn-primary" >Supprimer le film</button>
+<button type="button" (click)="vider()" class="btn btn-primary" >Vider la liste</button>

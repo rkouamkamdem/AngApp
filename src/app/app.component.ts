@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title: string = '1ère App Angula de Roméo !! ';
+
+  getTitle(): string {
+    return this.title;
+  }
+  
+myAlert(data: string): void{
+alert(data);
+}
+
 }
